@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>eu.qrowd_project.nifi</groupId>
-	<artifactId>faceted-benchmark-docker-parent</artifactId>
+	<artifactId>qrowd-nifi-plugin-bundle</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -54,6 +54,7 @@
 						<!-- <useBaseVersion>false</useBaseVersion> -->
 						<overWriteReleases>false</overWriteReleases>
 						<overWriteSnapshots>true</overWriteSnapshots>
+						<excludeTransitive>true</excludeTransitive>
 						<includeScope>runtime</includeScope>
 						<outputDirectory>${project.build.directory}/lib</outputDirectory>
 					</configuration>
@@ -62,14 +63,5 @@
 		</pluginManagement>
 	</build>
 
-<!--
-<distributionManagement>
-    <repository>
-        <id>git.project-hobbit.eu:4567</id>
-        <name>hobbit docker repo</name>
-        <url>git.project-hobbit.eu:4567</url>
-    </repository>
-</distributionManagement>
--->
-
 </project>
+
