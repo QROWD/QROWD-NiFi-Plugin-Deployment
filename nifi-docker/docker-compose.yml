@@ -17,13 +17,13 @@ services:
       - LDAP_MANAGER_DN=${LDAP_MANAGER_DN}
       - LDAP_MANAGER_PASSWORD=${LDAP_MANAGER_PASSWORD}
       - LDAP_USER_SEARCH_BASE=${LDAP_USER_SEARCH_BASE}
-      - LDAP_USER_SEARCH_FILTER=CN={0}
+      - LDAP_USER_SEARCH_FILTER=${LDAP_USER_SEARCH_FILTER}
       - LDAP_IDENTITY_STRATEGY=USE_DN
 #      - LDAP_IDENTITY_STRATEGY=USE_USERNAME
       - LDAP_URL=ldap://ldap.aksw.org
     ports:
       - 8443:8443
     volumes:
-      - ./target/certs:/opt/certs
+      - './target/certs:/opt/certs'
     restart: always
 
