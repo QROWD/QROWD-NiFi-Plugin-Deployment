@@ -8,7 +8,7 @@ storePass="changeit"
 
 #/CN=NiFi Admin/C=DE/L=Leipzig
 
-target="target/certs"
+target="/certs"
 mkdir -p "$target"
 
 openssl req -x509 -newkey rsa:2048 -keyout "$target/admin-private-key.pem" -out "$target/admin-cert.pem" -days 365 -subj "$initialAdmin" -nodes
