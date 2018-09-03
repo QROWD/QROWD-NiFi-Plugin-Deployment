@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.3
 
 services:
   nifi:
@@ -8,12 +8,32 @@ services:
       - .env
     volumes:
       - type: bind
+        source: ./nars/nifi-hive3-nar-1.7.1.nar
+        target: '${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}/lib/1.nar'
+        read_only: true
+      - type: bind
+        source: ./nars/nifi-mongodb-services-nar-1.6.0.nar
+        target: '${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}/lib/2.nar'
+        read_only: true
+      - type: bind
         source: ./certs
         target: /opt/certs
         read_only: true
       - type: volume
+        source: nifi-data
+        target: '${NIFI_BASE_DIR}/data'
+      - type: volume
+        source: nifi-flowfile_repository
+        target: '${NIFI_BASE_DIR}/flowfile_repository'
+      - type: volume
+        source: nifi-content_repository
+        target: '${NIFI_BASE_DIR}/content_repository'
+      - type: volume
+        source: nifi-provenance_repository
+        target: '${NIFI_BASE_DIR}/provenance_repository'
+      - type: volume
         source: nifi
-        target: '/opt/nifi/nifi-${NIFI_VERSION}'
+        target: '${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}'
     restart: always
     network_mode: host
     ports: 
@@ -38,4 +58,8 @@ services:
 
 volumes:
   nifi:
+  nifi-data:
+  nifi-flowfile_repository:
+  nifi-content_repository:
+  nifi-provenance_repository:
   nifi-registry:

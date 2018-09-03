@@ -14,4 +14,3 @@ openssl pkcs12 -inkey "$target/admin-private-key.pem" -in "$target/admin-cert.pe
 keytool -genkeypair -alias nifiserver -keyalg RSA -keypass "$KEYSTORE_PASSWORD" -storepass "$TRUSTSTORE_PASSWORD" -keystore "$target/keystore.jks" -dname "$INITIAL_ADMIN_IDENTITY" -noprompt
 
 keytool -importcert -v -trustcacerts -alias admin -file "$target/admin-cert.pem" -keystore "$target/truststore.jks" -storepass "$TRUSTSTORE_PASSWORD" -noprompt
-
