@@ -8,29 +8,13 @@ services:
       - .env
     volumes:
       - type: bind
-        source: /tmp/nifi-hive3-nar-1.7.1.nar
-        target: '${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}/lib/1.nar'
-        read_only: true
-      - type: bind
-        source: /tmp/nifi-mongodb-services-nar-1.6.0.nar
-        target: '${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}/lib/2.nar'
+        source: /tmp/nar
+        target: /opt/nifi/nar
         read_only: true
       - type: bind
         source: ./certs
         target: /opt/certs
         read_only: true
-      - type: volume
-        source: nifi-data
-        target: '${NIFI_BASE_DIR}/data'
-      - type: volume
-        source: nifi-flowfile_repository
-        target: '${NIFI_BASE_DIR}/flowfile_repository'
-      - type: volume
-        source: nifi-content_repository
-        target: '${NIFI_BASE_DIR}/content_repository'
-      - type: volume
-        source: nifi-provenance_repository
-        target: '${NIFI_BASE_DIR}/provenance_repository'
       - type: volume
         source: nifi
         target: '${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}'
@@ -58,8 +42,4 @@ services:
 
 volumes:
   nifi:
-  nifi-data:
-  nifi-flowfile_repository:
-  nifi-content_repository:
-  nifi-provenance_repository:
   nifi-registry:

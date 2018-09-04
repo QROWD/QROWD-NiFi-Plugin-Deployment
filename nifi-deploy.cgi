@@ -10,8 +10,7 @@ if cd "$repoPath"; then git pull; else git clone "https://github.com/QROWD/QROWD
 cd "$repoPath"
 mvn clean install
 
-cp "$repoPath"/target/lib/*.nar /tmp
+mkdir /tmp/nar
+cp "$repoPath"/target/lib/*.nar /tmp/nar
 
 echo "Done."
-
-

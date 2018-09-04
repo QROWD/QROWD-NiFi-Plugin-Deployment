@@ -14,7 +14,8 @@ This repo has a commit hook which reads the pom.xml and installs all referenced 
 
 ## Adding a User
 
-1. Add user to ldap
+1. Add user to ldap group:
+   [web2ldap :: ldap://ldap.aksw.org :: dc=aksw,dc=org :: Basic Search Form](https://ldap.aksw.org/web2ldap-k/searchform?ldapurl=ldap%3A%2F%2Fldap.aksw.org%2Fdc%3Daksw%2Cdc%3Dorg%3F%3F%3F%3Fx-starttls%3D2)
 2. Add user to nifi group
 
 ## Adding a Processor
