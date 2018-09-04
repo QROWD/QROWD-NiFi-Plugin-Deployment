@@ -7,9 +7,9 @@ This repo has a commit hook which reads the pom.xml and installs all referenced 
 
 ```bash
 mvn deploy:deploy-file \
-  -DgroupId=lib \
-  -DartifactId=artifact \
-  -Dpackaging=jar \
+  -DgroupId=my.company \
+  -DartifactId=awesome-nifi-plugin \
+  -Dpackaging=nar \
   -Dversion=1.0.0 \
   -DgeneratePom=true \
   -Dfile=your-artifact-file.nar \
