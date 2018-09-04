@@ -13,6 +13,7 @@ fi
 # Load a config if available
 test -f "$confFile" && source "$confFile"
 
+echo "Using repository path $repoPath"
 
 #repoPath="/tmp/nifi/plugins/repo"
 
