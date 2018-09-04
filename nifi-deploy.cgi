@@ -6,7 +6,7 @@ echo ""
 confFile="nifi-deploy.conf"
 
 # By default, assume nifi-deploy is a symbolic link into a git repo
-if [ -z "repoPath" ]; then
+if [ -z "$repoPath" ]; then
   repoPath=$(dirname $(readlink -f "$0"))
 fi
 
