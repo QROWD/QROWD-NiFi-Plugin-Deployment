@@ -21,4 +21,4 @@ This repo has a commit hook which reads the pom.xml and installs all referenced 
 
 1. Add artifact to pom
 2. `./nifi-deploy.cgi`
-3. Add nar to docker-compose.ym
+3. Add nar to docker-compose.yml

@@ -1,10 +1,17 @@
-#!/bin/bas
+#!/bin/bash
 
-echo "Pull changes"
-git pull
-echo "Build nars"
+# Needed to avoid apache error message about malformed headers
+echo ""
+
+repoPath="/tmp/nifi/plugins/repo"
+
+if cd "$repoPath"; then git pull; else git clone "https://github.com/QROWD/QROWD-NiFi-Plugin-Deployment.git" "$repoPath"; fi
+
+cd "$repoPath"
 mvn clean install
-echo "Copy nars to mount"
-cp ./target/lib/*.nar ./setup/nars/
-echo "Clean up"
-mvn cle
+
+cp "$repoPath"/target/lib/*.nar /tmp
+
+echo "Done."
+
+

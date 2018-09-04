@@ -1,4 +1,4 @@
-version: '3.3
+version: '3.3'
 
 services:
   nifi:
@@ -8,11 +8,11 @@ services:
       - .env
     volumes:
       - type: bind
-        source: ./nars/nifi-hive3-nar-1.7.1.nar
+        source: /tmp/nifi-hive3-nar-1.7.1.nar
         target: '${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}/lib/1.nar'
         read_only: true
       - type: bind
-        source: ./nars/nifi-mongodb-services-nar-1.6.0.nar
+        source: /tmp/nifi-mongodb-services-nar-1.6.0.nar
         target: '${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}/lib/2.nar'
         read_only: true
       - type: bind
