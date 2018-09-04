@@ -67,4 +67,25 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             </plugins>
         </pluginManagement>
     </build>
+
+        <repositories>
+
+                <repository>
+                        <id>local-maven-repo</id>
+                        <name>In-git maven repository for nifi plugins</name>
+                        <url>file://${project.basedir}/m2/repository</url>
+                </repository>
+
+                <repository>
+                        <id>maven.aksw.internal</id>
+                        <name>University Leipzig, AKSW Maven2 Repository</name>
+                        <url>http://maven.aksw.org/repository/internal</url>
+                </repository>
+                <repository>
+                        <id>maven.aksw.snapshots</id>
+                        <name>University Leipzig, AKSW Maven2 Repository</name>
+                        <url>http://maven.aksw.org/repository/snapshots</url>
+                </repository>
+        </repositories>
+
 </project>

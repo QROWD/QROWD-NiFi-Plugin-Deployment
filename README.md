@@ -3,6 +3,19 @@
 This repo has a commit hook which reads the pom.xml and installs all referenced nar dependencies at the qrowd nifi installation by invoking
 [qrowd server]/cgi-bin/nifi-deploy.cgi
 
+## Deploy a nar plugin directly to the maven repository embedded in this git repository:
+
+```bash
+mvn deploy:deploy-file \
+  -DgroupId=lib \
+  -DartifactId=artifact \
+  -Dpackaging=jar \
+  -Dversion=1.0.0 \
+  -DgeneratePom=true \
+  -Dfile=your-artifact-file.nar \
+  -Durl=file:///path/to/this/git/m2/repository
+```
+
 ## Deploy Nifi
 
 1. Rename ./setup/env.dist to .env and change variable
