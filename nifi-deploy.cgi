@@ -25,4 +25,7 @@ mvn clean install
 mkdir /tmp/nar
 cp "$repoPath"/target/lib/*.nar /tmp/nar
 
+cd /var/www/cgi-bin/QROWD-NiFi-Plugin-Deployment/setup
+nifi-restart
+
 echo "Done."
