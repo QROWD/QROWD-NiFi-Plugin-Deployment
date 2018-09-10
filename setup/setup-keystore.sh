@@ -7,7 +7,7 @@ target="certs"
 
 mkdir -p "$target"
 
-openssl req -x509 -newkey rsa:2048 -keyout "$target/admin-private-key.pem" -out "$target/admin-cert.pem" -days 365 -subj "$CSR_SUBJ" -nodes
+openssl req -x509 -newkey rsa:2048 -keyout "$target/admin-private-key.pem" -out "$target/admin-cert.pem" -days 365 -subj "$CSR_SUBJ" -nodes -config req.conf
 
 openssl pkcs12 -inkey "$target/admin-private-key.pem" -in "$target/admin-cert.pem" -export -out "$target/admin.pfx" -passout pass:"$KEYSTORE_PASSWORD"
 
