@@ -18,8 +18,9 @@ services:
       - type: volume
         source: nifi
         target: '${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}'
+    networks:
+      - nifi
     restart: always
-    network_mode: host
     ports: 
       - '${NIFI_WEB_HTTPS_PORT}:${NIFI_WEB_HTTPS_PORT}'
 
@@ -36,10 +37,16 @@ services:
       - type: volume
         source: nifi-registry
         target: '/opt/nifi-registry/nifi-registry-${NIFI_REGISTRY_VERSION}'
-    network_mode: host
+    networks:
+      - nifi
     ports: 
       - '${NIFI_REGISTRY_WEB_HTTPS_PORT}:${NIFI_REGISTRY_WEB_HTTPS_PORT}'
 
 volumes:
   nifi:
   nifi-registry:
+
+networks:
+  nifi:
+    external: true
+
