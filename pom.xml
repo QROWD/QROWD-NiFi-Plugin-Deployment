@@ -21,13 +21,16 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <version>1.6.0</version>
             <type>nar</type>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.apache.nifi/nifi-hive3-nar -->
+<!--
         <dependency>
             <groupId>org.apache.nifi</groupId>
             <artifactId>nifi-hive3-nar</artifactId>
             <version>1.7.1</version>
             <type>nar</type>
         </dependency>
+-->
     </dependencies>
     <build>
         <plugins>
